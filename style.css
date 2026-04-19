@@ -194,13 +194,27 @@ body.light-mode #navbar {
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: linear-gradient(
+    120deg,
+    var(--accent) 0%,
+    var(--accent2) 40%,
+    #fff 50%,
+    var(--accent2) 60%,
+    var(--accent) 100%
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
   flex-shrink: 0;
   letter-spacing: -0.5px;
+  animation: logo-shimmer 3s linear infinite;
+}
+
+@keyframes logo-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
 
 .nav-links {
@@ -536,7 +550,6 @@ body.light-mode #navbar {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   padding: 4px;
-  animation: float 6s ease-in-out infinite;
   position: relative;
 }
 
@@ -799,6 +812,14 @@ body.light-mode #navbar {
   height: 180px;
   position: relative;
   overflow: hidden;
+}
+
+.project-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .project-card:nth-child(1) .project-image {
@@ -1276,6 +1297,175 @@ a.cert-card:hover .cert-view-btn {
   color: var(--muted);
   font-size: 0.875rem;
   line-height: 1.6;
+}
+
+/* ===== EDUCATION TIMELINE ===== */
+.education-timeline {
+  max-width: 750px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 60px;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  border-radius: 2px;
+}
+
+.edu-timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.edu-timeline-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  position: absolute;
+  left: -60px;
+  top: 0;
+  box-shadow: 0 0 0 4px var(--bg), 0 0 16px var(--accent-glow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.edu-timeline-item:hover .edu-timeline-dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 24px var(--accent-glow);
+}
+
+.edu-timeline-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  flex: 1;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  border-radius: 4px 0 0 4px;
+}
+
+.edu-timeline-item:hover .edu-timeline-card {
+  transform: translateX(6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.edu-timeline-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.edu-timeline-degree {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.edu-timeline-branch {
+  color: var(--accent2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.edu-timeline-college {
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.edu-timeline-college i {
+  color: var(--accent);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.edu-timeline-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.edu-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+}
+
+.edu-status.completed {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .education-timeline {
+    padding-left: 48px;
+  }
+  .education-timeline::before {
+    left: 17px;
+  }
+  .edu-timeline-dot {
+    left: -48px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .edu-timeline-card {
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  }
+  .edu-timeline-degree {
+    font-size: 1.05rem;
+  }
 }
 
 

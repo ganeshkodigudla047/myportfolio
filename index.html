@@ -23,6 +23,7 @@
           <li><a href="#about"        class="nav-link">About</a></li>
           <li><a href="#skills"       class="nav-link">Skills</a></li>
           <li><a href="#projects"     class="nav-link">Projects</a></li>
+          <li><a href="#education"    class="nav-link">Education</a></li>
           <li><a href="#certificates" class="nav-link">Certificates</a></li>
           <li><a href="#contact"      class="nav-link">Contact</a></li>
         </ul>
@@ -45,6 +46,7 @@
       <li><a href="#about"        data-section="about"        title="About"><span class="dot"></span></a></li>
       <li><a href="#skills"       data-section="skills"       title="Skills"><span class="dot"></span></a></li>
       <li><a href="#projects"     data-section="projects"     title="Projects"><span class="dot"></span></a></li>
+      <li><a href="#education"    data-section="education"    title="Education"><span class="dot"></span></a></li>
       <li><a href="#certificates" data-section="certificates" title="Certificates"><span class="dot"></span></a></li>
       <li><a href="#contact"      data-section="contact"      title="Contact"><span class="dot"></span></a></li>
     </ul>
@@ -330,8 +332,14 @@
 
         <!-- Project 1 -->
         <article class="project-card fade-in-up delay-1">
-          <div class="project-image project-img-1" aria-hidden="true">
-            <div class="project-icon-wrap">
+          <div class="project-image project-img-1">
+            <img
+              src="chatbot-preview.png"
+              alt="College Information Gen-AI Chatbot preview"
+              class="project-preview-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-icon-wrap" style="display:none;">
               <i class="fas fa-robot"></i>
             </div>
           </div>
@@ -358,8 +366,14 @@
 
         <!-- Project 2 -->
         <article class="project-card fade-in-up delay-2">
-          <div class="project-image project-img-2" aria-hidden="true">
-            <div class="project-icon-wrap">
+          <div class="project-image project-img-2">
+            <img
+              src="attendance-preview.png"
+              alt="Student Attendance Monitoring System preview"
+              class="project-preview-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-icon-wrap" style="display:none;">
               <i class="fas fa-user-check"></i>
             </div>
           </div>
@@ -411,6 +425,81 @@
             </div>
           </div>
         </article>
+
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION SECTION ===== -->
+    <section id="education" class="section">
+      <div class="section-header fade-in-up">
+        <h2>Education</h2>
+        <p>My academic journey</p>
+      </div>
+
+      <div class="education-timeline">
+
+        <!-- Card 1 -->
+        <div class="edu-timeline-item fade-in-up delay-1">
+          <div class="edu-timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="edu-timeline-card">
+            <div class="edu-timeline-badge">B.Tech</div>
+            <h3 class="edu-timeline-degree">Bachelor of Technology</h3>
+            <p class="edu-timeline-branch">Computer Science &amp; Data Science (CSD)</p>
+            <p class="edu-timeline-college">
+              <i class="fas fa-university"></i>
+              Avanthi Institute of Engineering and Technology
+            </p>
+            <div class="edu-timeline-footer">
+              <span class="edu-status completed">
+                <i class="fas fa-check-circle"></i> Completed
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="edu-timeline-item fade-in-up delay-2">
+          <div class="edu-timeline-dot">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="edu-timeline-card">
+            <div class="edu-timeline-badge">Diploma</div>
+            <h3 class="edu-timeline-degree">Diploma in Engineering</h3>
+            <p class="edu-timeline-branch">Electrical &amp; Electronics Engineering (EEE)</p>
+            <p class="edu-timeline-college">
+              <i class="fas fa-university"></i>
+              NSRIT — Nadimpalli Satyanarayana Raju Institute of Technology
+            </p>
+            <div class="edu-timeline-footer">
+              <span class="edu-status completed">
+                <i class="fas fa-check-circle"></i> Completed
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="edu-timeline-item fade-in-up delay-3">
+          <div class="edu-timeline-dot">
+            <i class="fas fa-school"></i>
+          </div>
+          <div class="edu-timeline-card">
+            <div class="edu-timeline-badge">10th Class</div>
+            <h3 class="edu-timeline-degree">Secondary School Certificate</h3>
+            <p class="edu-timeline-branch">General Studies (SSC)</p>
+            <p class="edu-timeline-college">
+              <i class="fas fa-map-marker-alt"></i>
+              ZP High School, Saripalli
+            </p>
+            <div class="edu-timeline-footer">
+              <span class="edu-status completed">
+                <i class="fas fa-check-circle"></i> Completed
+              </span>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>

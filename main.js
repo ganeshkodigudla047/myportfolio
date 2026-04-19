@@ -80,15 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-          // Scrolling down — hide navbar
-          navbar.classList.add('nav-hidden');
           // Also close mobile menu if open
           navLinks.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
           hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-        } else {
-          // Scrolling up — show navbar
-          navbar.classList.remove('nav-hidden');
         }
 
         lastScrollY = currentScrollY;
