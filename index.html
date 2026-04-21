@@ -16,7 +16,18 @@
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">GK</a>
+      <a href="#hero" class="nav-logo" aria-label="GK Home">
+        <svg class="logo-svg" viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   class="logo-grad-start"/>
+              <stop offset="100%" class="logo-grad-end"/>
+            </linearGradient>
+          </defs>
+          <text x="2" y="34" class="logo-text logo-text-fill" font-family="Poppins,sans-serif" font-weight="800" font-size="36">GK</text>
+          <text x="2" y="34" class="logo-text logo-text-stroke" font-family="Poppins,sans-serif" font-weight="800" font-size="36">GK</text>
+        </svg>
+      </a>
       <div class="nav-links" id="nav-links">
         <ul>
           <li><a href="#hero"         class="nav-link active">Home</a></li>
@@ -56,50 +67,65 @@
   <main id="main-content">
 
     <!-- ===== HERO SECTION ===== -->
-    <section id="hero" class="section">
-      <!-- Background overlay handled by CSS -->
+    <section id="hero" class="hero-bg-section">
+
+      <!-- Fallback gradient (always visible) -->
+      <div class="hero-bg-fallback" aria-hidden="true"></div>
+
+      <!-- Background image — fades in after load -->
+      <img
+        id="hero-bg-img"
+        src="hero-bg.jpg"
+        alt=""
+        aria-hidden="true"
+        class="hero-bg-img"
+      />
+
+      <!-- Dark overlay for readability -->
       <div class="hero-bg-overlay" aria-hidden="true"></div>
 
-      <div class="hero-container">
-        <div class="hero-text">
-          <p class="hero-greeting">Hello, I'm</p>
-          <h1 class="hero-name">Ganesh<br>Kodigudla</h1>
-          <p class="hero-tagline">
-            <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
-          </p>
-          <p class="hero-intro">
-            I turn data into clear insights, practical analytics, and reliable dashboards.
-            I care about accuracy, storytelling, and continuously learning through real-world projects.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fas fa-eye" aria-hidden="true"></i> View Projects
-            </a>
-            <a href="certificates/Ganesh  (3).pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-download" aria-hidden="true"></i> Download Resume
-            </a>
-          </div>
-          <div class="hero-scroll">
-            <a href="#about" class="scroll-arrow" aria-label="Scroll to About section">
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </a>
+      <!-- Centered profile circle -->
+      <div class="hero-profile-center">
+        <div class="profile-image-wrapper hero-profile-animate">
+          <img
+            src="profile.jpg"
+            alt="K. Bala Ganesh Manikanta — profile photo"
+            class="profile-photo"
+            loading="eager"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="profile-fallback" aria-hidden="true" style="display:none;">
+            <span>GK</span>
           </div>
         </div>
+      </div>
 
-        <div class="hero-image">
-          <div class="profile-image-wrapper">
-            <img
-              src="profile.jpg"
-              alt="K. Bala Ganesh Manikanta — profile photo"
-              class="profile-photo"
-              loading="eager"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <!-- Fallback avatar shown if image fails to load -->
-            <div class="profile-fallback" aria-hidden="true" style="display:none;">
-              <span>GK</span>
-            </div>
-          </div>
+    </section>
+
+    <!-- ===== INTRO SECTION ===== -->
+    <section id="intro" class="intro-section">
+      <div class="intro-content">
+        <h1 class="intro-name">Ganesh Kodigudla</h1>
+        <p class="intro-role">Data Science Student</p>
+        <p class="intro-tagline">
+          <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+        <p class="intro-desc">
+          I turn data into clear insights, practical analytics, and reliable dashboards.
+          I care about accuracy, storytelling, and continuously learning through real-world projects.
+        </p>
+        <div class="intro-buttons">
+          <a href="#projects" class="btn btn-primary intro-btn">
+            <i class="fas fa-eye" aria-hidden="true"></i> View Projects
+          </a>
+          <a href="certificates/Ganesh  (3).pdf" class="btn btn-secondary intro-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+          </a>
+        </div>
+        <div class="hero-scroll">
+          <a href="#about" class="scroll-arrow" aria-label="Scroll to About section">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -631,100 +657,76 @@
         <h2>Contact</h2>
         <p>Let's connect and build something meaningful</p>
       </div>
-      <div class="contact-container">
 
-        <div class="contact-info fade-in-up delay-1">
-          <h3>Get In Touch</h3>
-          <p>
-            I'm open to internships, collaborations, and data science opportunities.
-            Whether you have a project idea or just want to say hello — my inbox is always open!
-          </p>
+      <!-- Intro -->
+      <p class="contact-intro fade-in-up delay-1">
+        I'm open to internships, collaborations, and data science opportunities.
+        Whether you have a project idea or just want to say hello — my inbox is always open!
+      </p>
 
-          <div class="contact-item">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:ganeshkodigudla047@gmail.com">ganeshkodigudla047@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-            <div>
-              <h4>LinkedIn</h4>
-              <p>
-                <a href="https://www.linkedin.com/in/kodigudla-bala-ganesh-manikanta-39233b263"
-                   target="_blank" rel="noopener noreferrer">
-                  kodigudla-bala-ganesh-manikanta
-                </a>
-              </p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <div>
-              <h4>GitHub</h4>
-              <p>
-                <a href="https://github.com/ganeshkodigudla047"
-                   target="_blank" rel="noopener noreferrer">
-                  github.com/ganeshkodigudla047
-                </a>
-              </p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-            <div>
-              <h4>Location</h4>
-              <p>India</p>
-            </div>
-          </div>
-        </div>
+      <!-- Contact Cards Grid -->
+      <div class="contact-cards fade-in-up delay-2">
 
-        <div class="contact-form-wrapper fade-in-up delay-2">
-          <form id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Internship / Collaboration / Hello" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
-            </button>
-          </form>
+        <a href="mailto:ganeshkodigudla047@gmail.com" class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>Email</h4>
+            <p>ganeshkodigudla047@gmail.com</p>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/kodigudla-bala-ganesh-manikanta-39233b263"
+           target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>LinkedIn</h4>
+            <p>kodigudla-bala-ganesh-manikanta</p>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <a href="https://github.com/ganeshkodigudla047"
+           target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card-icon github">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>GitHub</h4>
+            <p>github.com/ganeshkodigudla047</p>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <div class="contact-card no-link">
+          <div class="contact-card-icon location">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-card-body">
+            <h4>Location</h4>
+            <p>India</p>
+          </div>
         </div>
 
       </div>
 
-      <!-- Social Links -->
-      <div class="social-links fade-in-up">
-        <a href="https://github.com/ganeshkodigudla047" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/kodigudla-bala-ganesh-manikanta-39233b263" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:ganeshkodigudla047@gmail.com" class="social-btn" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
+      <!-- Availability Badge -->
+      <div class="contact-availability fade-in-up delay-3">
+        <span class="availability-dot"></span>
+        <span>Ready to take on responsibilities from day one</span>
       </div>
+
     </section>
 
   </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 K. Bala Ganesh Manikanta &mdash; Built with <span aria-label="passion">&#10084;&#65039;</span> and curiosity</p>
+    <p>&copy; 2025 K. Bala Ganesh Manikanta &mdash; Built with precision and passion.</p>
   </footer>
 
   <!-- ===== TOAST NOTIFICATION ===== -->

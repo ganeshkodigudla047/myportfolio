@@ -473,4 +473,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ============================================================
+     15. HERO BACKGROUND IMAGE FADE-IN
+         Fades in background image after it fully loads
+     ============================================================ */
+  const heroBgImg = document.getElementById('hero-bg-img');
+
+  if (heroBgImg) {
+    if (heroBgImg.complete && heroBgImg.naturalWidth > 0) {
+      heroBgImg.classList.add('loaded');
+    } else {
+      heroBgImg.addEventListener('load', () => {
+        heroBgImg.classList.add('loaded');
+      });
+      // If image fails, fallback gradient stays visible
+      heroBgImg.addEventListener('error', () => {
+        heroBgImg.style.display = 'none';
+      });
+    }
+  }
+
 }); // end DOMContentLoaded
